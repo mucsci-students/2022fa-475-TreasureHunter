@@ -9,12 +9,36 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     public Camera PlayerCamera;
     public float CameraSlideOffset = 1.5f;
     public float CameraSlideSpeed = 10;
-
-    // TODO: Allow specifying a projectile
-
+    
     private Rigidbody2D _rigidBody;
     private float _cameraSlideTarget = 0;
-    private bool _facingLeft = false;
+    private Gun _gun;
+    private IDamageable _damageable;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _gun = GetComponentInChildren<Gun>();
+        _damageable = GetComponentInChildren<IDamageable>();
+        if (_damageable is not null) {
+
+            _damageable.OnDestroyed += (_, _) => { Destroy(gameObject); };
+        
+        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        Vector3 currentCameraLocation = PlayerCamera.transform.localPosition;
+        currentCameraLocation.x = Mathf.Lerp(currentCameraLocation.x, _cameraSlideTarget, CameraSlideSpeed * Time.deltaTime);
+        PlayerCamera.transform.localPosition = currentCameraLocation;
+
+    }
 
     public void Jump()
     {
@@ -28,52 +52,42 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     }
 
     public void PrimaryAttack()
-    {
-        throw new System.NotImplementedException();
-    }
+        => _gun.Shoot();
 
     public void SecondaryAttack()
     {
         throw new System.NotImplementedException();
     }
 
-    public void Walk(EWalkDirection direction)
+    public void Walk(float stick)
     {
 
-        float speed = 0;
-        if (direction == EWalkDirection.LEFT)
+        if (stick < 0)
         {
 
-            speed = -PlayerMovementSpeed;
             _cameraSlideTarget = -CameraSlideOffset;
 
+            Vector3 gunScale = _gun.transform.localScale;
+            gunScale.x = (gunScale.x > 0 ? -gunScale.x : gunScale.x);
+            _gun.transform.localScale = gunScale;
+
         }
 
-        else if (direction == EWalkDirection.RIGHT)
+        else if (stick > 0)
         {
 
-            speed = PlayerMovementSpeed;
             _cameraSlideTarget = CameraSlideOffset;
+
+            Vector3 gunScale = _gun.transform.localScale;
+            gunScale.x = (gunScale.x > 0 ? gunScale.x : -gunScale.x);
+            _gun.transform.localScale = gunScale;
 
         }
 
-        _rigidBody.transform.Translate(new Vector2(speed * Time.deltaTime, 0));
-
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        _rigidBody = GetComponent<Rigidbody2D>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        Vector3 currentCameraLocation = PlayerCamera.transform.localPosition;
-        currentCameraLocation.x = Mathf.Lerp(currentCameraLocation.x, _cameraSlideTarget, CameraSlideSpeed * Time.deltaTime);
-        PlayerCamera.transform.localPosition = currentCameraLocation;
+        Vector2 velocity = _rigidBody.velocity;
+        velocity.x = PlayerMovementSpeed * stick;
+        _rigidBody.velocity = velocity;
         
     }
+
 }

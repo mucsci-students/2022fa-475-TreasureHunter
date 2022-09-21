@@ -1,18 +1,8 @@
-using System;
-
-public enum EWalkDirection 
-{ 
-    
-    LEFT,
-    RIGHT
-
-}
-
 public interface IActionPlayer
 {
 
     // Walking & movement controls
-    public void Walk(EWalkDirection direction);
+    public void Walk(float stick);
     public void Jump();
 
     // Attacking
