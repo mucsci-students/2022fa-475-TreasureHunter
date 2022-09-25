@@ -8,8 +8,9 @@ public interface IDamageable
 
     public float GetHealthPercentage();
 
-    public void ApplyDamage(float damage);
+    public void ApplyDamage(GameObject DamageCauser, float damage);
 
     public event EventHandler OnDestroyed;
+    public event EventHandler<GameObject> OnAnyDamage;
 
 }

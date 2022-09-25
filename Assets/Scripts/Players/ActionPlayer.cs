@@ -15,10 +15,13 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     private Gun _gun;
     private IDamageable _damageable;
 
+    private IInventory _inventoryComponent;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        _inventoryComponent = GetComponent<IInventory>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _gun = GetComponentInChildren<Gun>();
         _damageable = GetComponentInChildren<IDamageable>();
@@ -44,7 +47,7 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     {
 
         // Only allow jumping if the player is grounded
-        if (_rigidBody.velocity.y == 0)
+        if (Mathf.Abs(_rigidBody.velocity.y) <= 0.01)
         {
             _rigidBody.AddForce(Vector2.up * JumpImpulseMagnitude, ForceMode2D.Impulse);
         }
@@ -89,5 +92,18 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
         _rigidBody.velocity = velocity;
         
     }
+
+    public IInventory GetInventoryComponent() => _inventoryComponent;
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        // Run interactables
+        IInteractable otherAsInteractable = collision.gameObject.GetComponent<IInteractable>();
+        otherAsInteractable?.Interact(gameObject);
+
+    }
+
+    public bool IsFlipped() => _gun.transform.localScale.x < 0;
 
 }

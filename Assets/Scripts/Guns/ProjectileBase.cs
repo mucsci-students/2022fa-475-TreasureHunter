@@ -48,7 +48,7 @@ public class ProjectileBase : MonoBehaviour
             IDamageable damageComponent = hit.GetComponent<IDamageable>();
             if (damageComponent is not null)
             {
-                damageComponent.ApplyDamage(Damage);
+                damageComponent.ApplyDamage(_instigator, Damage);
             }
 
             Destroy(gameObject);
