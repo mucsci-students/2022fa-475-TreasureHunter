@@ -10,12 +10,20 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     public float CameraSlideOffset = 1.5f;
     public float CameraSlideSpeed = 10;
     
+    public Vector3 _lastPosition = new(0, 0, 0);
+
     private Rigidbody2D _rigidBody;
     private float _cameraSlideTarget = 0;
     private Gun _gun;
     private IDamageable _damageable;
 
     private IInventory _inventoryComponent;
+
+    private ActionPlayerAnimation playerAnimation;
+
+    private Animator _animator;
+
+    private SpriteRenderer _sprite;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +33,15 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
         _rigidBody = GetComponent<Rigidbody2D>();
         _gun = GetComponentInChildren<Gun>();
         _damageable = GetComponentInChildren<IDamageable>();
+        playerAnimation = GetComponent<ActionPlayerAnimation>();
+        _sprite = GetComponent<SpriteRenderer>();
         if (_damageable is not null) {
 
             _damageable.OnDestroyed += (_, _) => { Destroy(gameObject); };
         
         }
+
+        _animator = GetComponent<Animator>();
 
     }
 
@@ -65,6 +77,9 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
     public void Walk(float stick)
     {
 
+        _animator.SetBool("isIdle", stick == 0);
+        _animator.SetFloat("walkingStick", stick);
+        
         if (stick < 0)
         {
 
@@ -73,6 +88,7 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
             Vector3 gunScale = _gun.transform.localScale;
             gunScale.x = (gunScale.x > 0 ? -gunScale.x : gunScale.x);
             _gun.transform.localScale = gunScale;
+            _sprite.flipX = true;
 
         }
 
@@ -84,6 +100,7 @@ public class ActionPlayer : MonoBehaviour, IActionPlayer
             Vector3 gunScale = _gun.transform.localScale;
             gunScale.x = (gunScale.x > 0 ? gunScale.x : -gunScale.x);
             _gun.transform.localScale = gunScale;
+            _sprite.flipX = false;
 
         }
 
