@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - King Chamber Door
+  - Queen Chamber Door
+  - Guest Chamber Door
+  - King Key
+  - Queen Key
+  - Guest Key
   layers:
   - Default
   - TransparentFX
