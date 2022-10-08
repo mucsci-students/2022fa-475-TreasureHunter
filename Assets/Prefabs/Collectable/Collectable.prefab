@@ -11,8 +11,11 @@ GameObject:
   - component: {fileID: 8604403189571654457}
   - component: {fileID: 8604403189571654456}
   - component: {fileID: 8604403189571654462}
+<<<<<<< HEAD
   - component: {fileID: 8604403189571654458}
   - component: {fileID: 1403375185176910016}
+=======
+>>>>>>> 756d63b2abd9dd7806aa6188b6dc2316fee28b76
   m_Layer: 0
   m_Name: Collectable
   m_TagString: Untagged
@@ -113,6 +116,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.89, y: 0.38}
   m_EdgeRadius: 0
+<<<<<<< HEAD
 --- !u!114 &8604403189571654458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +151,5 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> 756d63b2abd9dd7806aa6188b6dc2316fee28b76
