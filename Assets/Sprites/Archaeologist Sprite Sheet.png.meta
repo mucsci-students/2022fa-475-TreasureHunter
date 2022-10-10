@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 15
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1078,9 +1078,9 @@ TextureImporter:
       Archaeologist Sprite Sheet_8: 259342792
       Archaeologist Sprite Sheet_6: 234103222
       Archaeologist Sprite Sheet_44: -1195721482
+      Archaeologist Sprite Sheet_40: 1054819957
       Archaeologist Sprite Sheet_30: 1925568407
       Archaeologist Sprite Sheet_36: 1132682296
-      Archaeologist Sprite Sheet_40: 1054819957
       Archaeologist Sprite Sheet_33: 698400447
       Archaeologist Sprite Sheet_12: -1692304772
       Archaeologist Sprite Sheet_0: -1404925115

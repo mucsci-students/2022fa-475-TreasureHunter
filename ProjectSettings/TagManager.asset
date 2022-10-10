@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - King Chamber Door
+  - Queen Chamber Door
+  - Guest Chamber Door
+  - King Key
+  - Queen Key
+  - Guest Key
   layers:
   - Default
   - TransparentFX
@@ -40,4 +46,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 315264077
+    locked: 0
+  - name: Foreground
+    uniqueID: 1929547253
+    locked: 0
+  - name: Platforms
+    uniqueID: 4288478999
+    locked: 0
+  - name: Traps
+    uniqueID: 1903758813
+    locked: 0
+  - name: Top
+    uniqueID: 2949600449
     locked: 0
