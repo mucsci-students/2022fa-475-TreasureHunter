@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2882157771
+    locked: 0
+  - name: Foreground
+    uniqueID: 1184865485
+    locked: 0
+  - name: Platforms
+    uniqueID: 2991396627
+    locked: 0
+  - name: Traps
+    uniqueID: 24555529
+    locked: 0
+  - name: Top
+    uniqueID: 3920291185
+    locked: 0
