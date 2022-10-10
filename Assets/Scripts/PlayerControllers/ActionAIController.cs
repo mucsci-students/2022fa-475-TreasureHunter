@@ -64,6 +64,8 @@ public class ActionAIController : MonoBehaviour
                 ChasingTarget = DamageCauser;
                 CurrentState = AIState.CHASING;
 
+                print("Chasing Target: " + ChasingTarget);
+                print("Current State: " + CurrentState);
             }
         
         };
@@ -201,6 +203,10 @@ public class ActionAIController : MonoBehaviour
 
             default:
                 _controlledPlayer.Walk(0);
+                if(TryGetEnemy(out var seen)) {
+                    ChasingTarget = seen;
+                    CurrentState = AIState.CHASING;
+                }
                 break;
 
         }

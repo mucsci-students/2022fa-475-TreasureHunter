@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 6152406575785864965}
   m_Layer: 0
   m_Name: ActionPlayerPrefab
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -392,7 +392,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5a2f741111f86845977669695be4345, type: 3}
+  m_Sprite: {fileID: -1404925115, guid: 99b43e483ce062322b71c5995eb8b2c3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -482,7 +482,7 @@ Animator:
   m_GameObject: {fileID: 7333105662481438053}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f9caabde90a41363d8ac3c66c744930a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
