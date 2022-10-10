@@ -630,8 +630,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 315264077
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7e12ae509320e406486551c0c3e0f927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1256,7 +1256,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.4666667}
+    oldSize: {x: 1, y: 1.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1361,25 +1361,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8604403189571654456, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-<<<<<<< HEAD:Assets/Scenes/SampleScene.unity
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 1555331084, guid: d6d1647ad70914c7f93d3d7f7b5d705d, type: 3}
-    - target: {fileID: 8604403189571654456, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604403189571654456, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604403189571654456, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-=======
       propertyPath: m_MaskInteraction
       value: 2
->>>>>>> 756d63b2abd9dd7806aa6188b6dc2316fee28b76:Assets/Scenes/SampleScene 1.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8604403189571654457, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
       propertyPath: m_RootOrder
@@ -1429,14 +1412,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish
       objectReference: {fileID: 0}
-    - target: {fileID: 8604403189571654462, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8604403189571654462, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95817d4c3c749fe4baab43af2a8b7e00, type: 3}
 --- !u!1 &1464470173
@@ -1475,7 +1450,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.4666667}
+    oldSize: {x: 1, y: 1.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2072,7 +2047,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.4666667}
+    oldSize: {x: 1, y: 1.375}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
